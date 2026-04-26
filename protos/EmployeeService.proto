@@ -20,7 +20,7 @@ service EmployeeService {
   rpc ListAllEmployees (EmptyMessage) returns (EmployeeDataList) {}
 
   # novos serviços adicionados
-  rpc DefinirSalario (EmployeeSalaryUpdate) returns (StatusReply){}
+  rpc UpdateEmployeeSalary (EmployeeSalaryUpdate) returns (StatusReply) {}
   
 }
 

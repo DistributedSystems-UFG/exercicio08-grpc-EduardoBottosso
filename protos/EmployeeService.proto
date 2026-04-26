@@ -19,7 +19,7 @@ service EmployeeService {
   // List all employees
   rpc ListAllEmployees (EmptyMessage) returns (EmployeeDataList) {}
 
-  # novos serviços adicionados
+  // novo serviço adicionado. Eu também acrescentei o campo 'salary' no EmployeeData
   rpc UpdateEmployeeSalary (EmployeeSalaryUpdate) returns (StatusReply) {}
   
 }

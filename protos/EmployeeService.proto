@@ -20,7 +20,7 @@ service EmployeeService {
   rpc ListAllEmployees (EmptyMessage) returns (EmployeeDataList) {}
 
   # novos serviços adicionados
-  rpc DefinirSalario (EmployeeID) returns (StatusReply){}
+  rpc DefinirSalario (EmployeeSalaryUpdate) returns (StatusReply){}
   
 }
 
@@ -49,4 +49,9 @@ message EmptyMessage{}
 
 message EmployeeDataList{
   repeated EmployeeData employee_data = 1;
+}
+
+message EmployeeSalaryUpdate{
+  uint32 id = 1 ;
+  float slario = 2;
 }

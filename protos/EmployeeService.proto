@@ -29,7 +29,7 @@ message EmployeeData {
   uint32 id = 1;
   string name = 2;
   string title = 3;
-  float salario = 4;
+  float salary = 4;
 }
 
 message StatusReply {
@@ -53,5 +53,5 @@ message EmployeeDataList{
 
 message EmployeeSalaryUpdate{
   uint32 id = 1 ;
-  float slario = 2;
+  float salary = 2;
 }

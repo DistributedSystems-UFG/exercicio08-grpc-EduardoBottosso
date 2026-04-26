@@ -24,7 +24,7 @@ service EmployeeService {
   
 }
 
-#acrescentei o campo salario do tipo float
+//acrescentei o campo salary do tipo float
 message EmployeeData {
   uint32 id = 1;
   string name = 2;

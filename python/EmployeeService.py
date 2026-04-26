@@ -11,17 +11,29 @@ empDB=[
  {
  'id':101,
  'name':'Saravanan S',
- 'title':'Technical Leader'
+ 'title':'Technical Leader',
+ 'salary': 12500.0
  },
  {
  'id':201,
  'name':'Rajkumar P',
- 'title':'Sr Software Engineer'
+ 'title':'Sr Software Engineer',
+ 'salary': 9800.0
  }
  ]
 
 class EmployeeServer(EmployeeService_pb2_grpc.EmployeeServiceServicer):
 
+def UpdateEmployeeSalary(self, request, context):
+    usr = [emp for emp in empDB if emp['id'] == request.id]
+
+    if len(usr) == 0:
+        return EmployeeService_pb2.StatusReply(status='NOK')
+
+    usr[0]['salary'] = request.salary
+    return EmployeeService_pb2.StatusReply(status='OK')
+   
+ 
   def CreateEmployee(self, request, context):
     dat = {
     'id':request.id,
